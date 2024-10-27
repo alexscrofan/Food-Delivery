@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.interfaces.ItemClickListener
 import com.denzcoskun.imageslider.models.SlideModel
+import com.example.licenta_food_ordering.MenuBottomSheetFragment
 import com.example.licenta_food_ordering.R
 import com.example.licenta_food_ordering.adaptar.PopularAddaptar
 import com.example.licenta_food_ordering.databinding.FragmentHomeBinding
@@ -28,6 +29,11 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
+
+        binding.viewAllMenu.setOnClickListener {
+            val bottomSheetDialog=MenuBottomSheetFragment()
+            bottomSheetDialog.show(parentFragmentManager, "Test")
+        }
         return binding.root
 
     }
@@ -60,7 +66,7 @@ class HomeFragment : Fragment() {
         val Price = listOf("$5", "$7", "$8", "$10")
         val populerFoodImages = listOf(
             R.drawable.menu2,
-            R.drawable.menu2,
+            R.drawable.menu3,
             R.drawable.menu2,
             R.drawable.menu2
         )
